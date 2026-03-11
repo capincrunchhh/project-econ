@@ -45,7 +45,7 @@ cd $HOME\Desktop
 
 Same for Mac and Windows:
 
-git clone https://github.com/yourusername/project-econ.git
+git clone https://github.com/capincrunchhh/project-econ
 
 cd project-econ
 
