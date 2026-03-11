@@ -57,8 +57,8 @@ though the effect is likely small relative to the monthly aggregation.
 # Parameters
 #------------
 START_YEAR = 1970 # data prior to 1970 gets patchier
-REGRESSION_TARGET = 'L5_sp500_tr_1m'
-FWD_months = 1 # how many months are we trying to predict? 1m = predict next 1m return
+REGRESSION_TARGET = 'L5_sp500_tr_6m'
+FWD_months = 6 # how many months are we trying to predict? 1m = predict next 1m return
 r2_threshold      = 0.05 # R2-value threshold for inclusion in original 3 factors
 pval_threshold    = 0.05 # P-value threshold for inclusion in original 3 factors
 tiebreaker_gap    = 0.05 # tiebreaker gap for R2-val / P-val, if inside this gap, we default to manual, static factor bucket list
