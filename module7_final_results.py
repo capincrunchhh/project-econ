@@ -254,23 +254,17 @@ def run_final_synthesis(
     if macro_bullish and val_cheap:
         quadrant_val   = 'CHEAP VALUATION'
         quadrant_macro = 'MACRO BULLISH'
-        quadrant_label = 'Strong conviction buy'
-        quadrant_desc  = 'Best risk/reward'
+
     elif macro_bullish and not val_cheap:
         quadrant_val   = 'EXPENSIVE VALUATION'
         quadrant_macro = 'MACRO BULLISH'
-        quadrant_label = 'Momentum buy, vol risk'
-        quadrant_desc  = 'Returns likely positive but ceiling is lower'
+
     elif not macro_bullish and val_cheap:
         quadrant_val   = 'CHEAP VALUATION'
         quadrant_macro = 'MACRO BEARISH'
-        quadrant_label = 'Potential value trap'
-        quadrant_desc  = 'Watch for turn'
     else:
         quadrant_val   = 'EXPENSIVE VALUATION'
         quadrant_macro = 'MACRO BEARISH'
-        quadrant_label = 'Strong conviction sell'
-        quadrant_desc  = 'Worst risk/reward'
 
     # =========================================================
     # CONSENSUS AND VALUATION OVERLAY
@@ -576,8 +570,7 @@ def run_final_synthesis(
     logger.info(f'  ({days_remaining} days remaining in window)')
     logger.info(f'% odds above reflect empirical hit rate of {current_quintile_label.split("—")[0].strip()}. all months {eval_start_year} through present {pd.Timestamp.today().year}.')
     logger.info('')
-    logger.info(f'  ▶ {quadrant_val}  |  {quadrant_macro}')
-    logger.info(f'     {quadrant_label} — {quadrant_desc}')
+    logger.debug(f'  ▶ {quadrant_val}  |  {quadrant_macro}')
 
     return {
         's4_r2'               : s4_r2,
@@ -596,8 +589,6 @@ def run_final_synthesis(
         'val_overlay'         : val_overlay,
         'quadrant_val'        : quadrant_val,
         'quadrant_macro'      : quadrant_macro,
-        'quadrant_label'      : quadrant_label,
-        'quadrant_desc'       : quadrant_desc,
         'central_case_up'     : central_case_up,
         'central_case_down'   : central_case_down,
         'upside_prob'         : upside_prob,

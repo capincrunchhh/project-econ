@@ -57,7 +57,7 @@ though the effect is likely small relative to the monthly aggregation.
 # Parameters
 #------------
 START_YEAR = 1970 # data prior to 1970 gets patchier
-REGRESSION_TARGET = 'L5_sp500_tr_6m'
+REGRESSION_TARGET = 'L5_sp500_tr_1m'
 FWD_months = 1 # how many months are we trying to predict? 1m = predict next 1m return
 r2_threshold      = 0.05 # R2-value threshold for inclusion in original 3 factors
 pval_threshold    = 0.05 # P-value threshold for inclusion in original 3 factors
@@ -71,6 +71,10 @@ em_tol = 1e-4 # tolerances for EM algo (affects runtime). tol=1e-4 means stop wh
 
 # Pre-callibrated configurations:
 #--------------------------------
+
+# Intuition on how to use params. Target=6m SPX vs. FWD=1 in plain english = what will the trailing 6m return be in 1m from now.
+# The problem with this result is 5m are shared between FWD and Target, thus autocorrelation and OOS R2 is high. For more honest OOS R2, 
+# try to use FWD (prediction windows) which are >= TARGET. That said, parameter combos of Target >= FWD can still be very useful. 
 
 # TARGET=12m SPX | FWD=12 | "Macro Cycle"
 # Long-horizon factors and prediction. likely that HAC autocorrelation fix correction fires (~55 obs, below stride threshold).
