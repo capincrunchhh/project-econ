@@ -18,29 +18,41 @@
 # SETUP:
 -------------
 **Requirements:** Python 3.14, [uv](https://docs.astral.sh/uv/)
+
 Download Python v3.14 here: https://www.python.org/downloads/
 
 **1. Install UV (Copy/Paste this into terminal)**
+
 Mac users:
+
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 Windows users:
+
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 **2. Navigate to where you want the model to be saved - Desktop recommended (Copy/Paste this into terminal)**
+
 Mac users:
+
 cd ~/Desktop
 
 Windows users:
+
 cd $HOME\Desktop
 
 **3. Create project-econ folder and download the repo there (Copy/Paste this into terminal)**
+
 Same for Mac and Windows:
+
 git clone https://github.com/yourusername/project-econ.git
+
 cd project-econ
 
 **4. Install dependencies (Copy/Paste this into terminal)**
+
 Same for Mac and Windows:
+
 uv sync
 
 **5. Add your API keys**
@@ -49,11 +61,15 @@ uv sync
 3. Replace this line: '_replace_with_your_API_key_here_' with your API key for each platform. Keep your API key in 'quotes'. Save.
 
 **6. Adjust parameters to your liking**
+
 The main script is: econ_model.py
+
 Open and modify econ_model.py to adjust the parameters to your liking, then save. Some recommended configurations are #commented.
 
 **7. Run (Copy/Paste this into terminal)**
+
 Same for Mac and Windows:
+
 uv run econ_model.py
 
 Note: The model prints progress to terminal as it runs. Total runtime is 
